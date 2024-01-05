@@ -1,0 +1,5 @@
+        params = {'learning_rate': 0.3, 'max_depth': 8, 'reg_lambda': 10, 'tree_method': 'gpu_hist', 'random_state': seed, 
+                  'objective': 'binary:logistic', 'eval_metric': 'auc'}
+        model = xgb.train(params, dtrain, num_boost_round=20000, evals=watchlist,
+                          early_stopping_rounds=60, verbose_eval=100)   
+ kf = StratifiedKFold(n_splits=100, shuffle=True, random_state=seed)
